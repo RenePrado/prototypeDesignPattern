@@ -23,4 +23,9 @@ public class SpreadsheetDocument implements Document {
     public String getType() {
         return "Spreadsheet";
     }
+
+    @Override
+    public String toString() {
+        return "Type: Spreadsheet, Name: " + spreadsheetName + ", Rows: " + rowCount + ", Columns: " + columnCount;
+    }
 }
