@@ -25,4 +25,9 @@ public class PdfDocument implements Document {
     public String getType() {
         return "PDF";
     }
+
+    @Override
+    public String toString() {
+        return "Type: PDF, File: " + fileName + ", Author: " + author +  ", Pages: " + pageCount;
+    }
 }
