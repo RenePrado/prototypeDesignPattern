@@ -2,19 +2,22 @@ public class ProcessedDocument {
     public static void main(String[] args) {
         DocumentRegistry registry = new DocumentRegistry();
 
-        Document pdf = registry.getPdfPrototype();
+        Document pdf = registry.createPdf();
         pdf.open();
-        System.out.println("Type: " + pdf.getType() + ", File: annual_report_2024.pdf, Author: Acme Corp, Pages: 150\n");
+        System.out.println(pdf);
+        System.out.println();
 
-        Document text = registry.getTextDocumentPrototype();
+        Document text = registry.createText();
         text.open();
-        System.out.println("Type: " + text.getType() + ", Path: meeting_notes.txt, Encoding: UTF-8, Words: 250\n");
+        System.out.println(text);
+        System.out.println();
 
-        Document spreadsheet = registry.getSpreadsheetPrototype();
+        Document spreadsheet = registry.createSpreadsheet();
         spreadsheet.open();
-        System.out.println("Type: " + spreadsheet.getType() + ", Name: sales_data_q1.xlsx, Rows: 1000, Columns: 20\n");
+        System.out.println(spreadsheet);
+        System.out.println();
 
-        Document summaryPdf = registry.createPdfCopy("summary_report.pdf", 30);
+        Document summaryPdf = registry.createPdfDocument("summary_report.pdf", 30);
         summaryPdf.open();
     }
 }
